@@ -18,7 +18,7 @@ def send(msg):
     send_length += b" " * (HEADER - len(send_length))
     client.send(send_length)
     client.send(message)
-    print(client.recv(2048).decode(FORMAT))
+    print(client.recv(HEADER).decode(FORMAT))
 
 
 running = True
@@ -29,10 +29,5 @@ while running:
         running = False
     else:
         send(result)
-# send("Hello World!")
-# input()
-# send("Hello Everyone!")
-# input()
-# send("Hello Tim!")
 
 send(DISCONNECT_MESSAGE)
