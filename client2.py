@@ -24,7 +24,7 @@ def send(msg):
 running = True
 
 while running:
-    result = input("> Player2: ")
+    result = input("> Player1: ")
     if result == "q" or result == "quit":
         running = False
     else:
