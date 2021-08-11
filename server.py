@@ -1,15 +1,17 @@
-import socket 
+import socket
 import threading
 
 HEADER = 64
 PORT = 5050
+# below is a way to get current ip address
 SERVER = socket.gethostbyname(socket.gethostname())
 ADDR = (SERVER, PORT)
-FORMAT = 'utf-8'
+FORMAT = "utf-8"
 DISCONNECT_MESSAGE = "!DISCONNECT"
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(ADDR)
+
 
 def handle_client(conn, addr):
     print(f"[NEW CONNECTION] {addr} connected.")
@@ -27,7 +29,7 @@ def handle_client(conn, addr):
             conn.send("Msg received".encode(FORMAT))
 
     conn.close()
-        
+
 
 def start():
     server.listen()
