@@ -5,6 +5,7 @@ HEADER = 64
 PORT = 5050
 FORMAT = "utf-8"
 DISCONNECT_MESSAGE = "!DISCONNECT"
+# To connect to worldwide put your public ip address here in server
 SERVER = socket.gethostbyname(socket.gethostname())
 ADDR = (SERVER, PORT)
 
